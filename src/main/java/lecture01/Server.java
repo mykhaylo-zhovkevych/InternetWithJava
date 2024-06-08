@@ -65,6 +65,7 @@ public class Server {
 //                   reader.mark(1);
 //               }
 //           }
+           System.out.println("Client connected from " + socket.getRemoteSocketAddress());
            char[] chars = new char[1024];
            int read;
            // will help not to close the connection after the first message
