@@ -1,0 +1,42 @@
+Application Layer Protocols:
+
+    Function: These protocols are at the top layer of the OSI model and provide services directly to the user's applications. They enable software applications to communicate over a network.
+
+    Examples: HTTP (used by web browsers), FTP (file transfer), SMTP (email), and DNS (domain name resolution).
+
+    Rules and Implementation: When implementing an application layer protocol, you generally follow specific standards defined by organizations like IETF. For instance, implementing an HTTP server would involve adhering to HTTP/1.1 or HTTP/2 standards. You can also create custom protocols, but they should be well-documented so other applications can understand how to communicate with yours.
+
+Transport Layer Protocols:
+
+    Function: These protocols are responsible for end-to-end communication and error-checking, ensuring data is sent and received correctly between devices over a network.
+
+    Examples: TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).
+        TCP: Ensures reliable transmission, maintains order, and checks for errors. It establishes a connection before transmitting data (connection-oriented).
+        UDP: Faster but less reliable. It sends data without establishing a connection (connectionless), making it suitable for applications where speed is critical and occasional loss of data is acceptable (e.g., live streaming).
+
+    Rules and Implementation: When using these protocols, you typically use existing libraries and APIs provided by your programming language, like sockets in Python. For TCP, you'd handle connection establishment, data transmission, and connection termination. For UDP, you'd focus on sending and receiving data packets without the overhead of connection management.
+
+
+When i use the Socket and the ServerSockt i use the protocol TCP that is one of the protocols by which intenet is based
+The protocol is used for transferring the chain of the bytes in form of stream of data that is why in the lecture01 i used inputStream and OutputStream
+the guarantee that me gives the tcp is if i connected to any computer and sent message to there when the message is delivered whoöe and not currupted
+when the data is send that will be taken as packets and to each packet the tcp add some meta data like port when  the message is sent, size od the message
+, controll isze of the message, and numerical number of the sent message, also diofferent optional meta data like data about the connection, etc.
+
+
+main difference when commaraing to the tcp is that udp dont work with stream of data but with concrete message, this message has some concrete length and i send it as one object 
+but not breaking it to the packets as with tcp, or verifying  even can the controll-size be ignored by default, but in the level of the application i can add some function that look calculates controll-size etc
+the main pro of udp is speed very fast 
+
+Implementation in Software:
+
+    Application Layer: Choose or design a protocol suitable for your application's needs. Use libraries or frameworks that support the chosen protocol. For instance, using Flask or Django in Python for HTTP servers.
+    Transport Layer: Use existing APIs (e.g., socket library in Python) to manage connections and data transmission. For TCP, you'd write code to handle connection setup, data sending/receiving, and disconnection. For UDP, you send and receive data packets directly.
+
+Rules to Follow:
+
+    Standards Compliance: Follow standards and specifications (like RFCs) for well-known protocols to ensure compatibility and reliability.
+    Security: Implement security measures like encryption (TLS/SSL for HTTP) to protect data.
+    Error Handling: Ensure your implementation can handle errors gracefully, especially for transport layer protocols.
+
+In summary, understanding the purpose and rules of these protocols helps you implement robust network communication in your software. Do you have a specific project in mind where you'd like to implement these protocols?
